@@ -9,8 +9,10 @@ public class Main {
         System.out.println(substr);
         int mult = calculator.multiply(345, 21);
         System.out.println(mult);
-        double div = calculator.divide(584.0,8.0);
+        double div = calculator.divide(584.0,7.0);
         System.out.println(div);
+        double div1 = calculator.divide(73, 7);
+        System.out.println(div1);
 
         Book book = new Book();
         book.setBookName("Head first Java");

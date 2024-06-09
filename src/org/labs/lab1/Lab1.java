@@ -26,7 +26,7 @@ public class Lab1 {
 
     public static void divide() {
         int number = 10500;
-        int result = (number / 10) / 10;
+        double result = ((double)number / 10) / 10 ;
         System.out.println(result);
     }
 
