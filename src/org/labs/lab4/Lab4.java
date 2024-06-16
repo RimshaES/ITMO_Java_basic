@@ -17,16 +17,16 @@ public class Lab4 {
 
     //Напишите программу, которая выводит числа от 1 до 100, которые делятся на 3, 5 и на то и другое
     public static void printDivThreeFive() {
-        List<Integer> divideBy3By5 = new ArrayList<>();
-        List<Integer> divideBy3 = new ArrayList<>();
-        List<Integer> divideBy5 = new ArrayList<>();
+        String divideBy3By5 = "";
+        String divideBy3 = "";
+        String divideBy5 = "";
         for (int i = 0; i < 100; i++) {
             if ((i % 3 == 0) && (i % 5 == 0)) {
-                divideBy3By5.add(i);
+                divideBy3By5 += i + " ";
             } else if (i % 3 == 0) {
-                divideBy3.add(i);
+                divideBy3 += i + " ";
             } else if (i % 5 == 0) {
-                divideBy5.add(i);;
+                divideBy5 += i + " ";
             }
         }
         System.out.println("Делятся на 3 и 5: " + divideBy3By5);
@@ -36,16 +36,10 @@ public class Lab4 {
 
     //Напишите программу, чтобы вычислить сумму двух целых чисел и вернуть true,
     // если сумма равна третьему целому числу
-    public static boolean compareNumbers() {
-        System.out.println("Введите первое число: ");
-        Scanner scanner = new Scanner(System.in);
-        int a = scanner.nextInt();
-        System.out.println("Введите второе число: ");
-        int b = scanner.nextInt();
-        System.out.println("Введите третье число: ");
-        int c = scanner.nextInt();
-
-        return a + b == c;
+    public static boolean compareNumbers(int a, int b, int c) {
+        boolean result = a + b == c;
+        System.out.println("Результат: " + result);
+        return result;
     }
 
     //Напишите программу, которая принимает от пользователя три целых числа и возвращает true,
@@ -56,35 +50,20 @@ public class Lab4 {
 
     //Напишите программу, чтобы проверить, появляется ли число 3 как первый или последний
     // элемент массива целых чисел
-    public static boolean compareWith3 () {
-        int[] array = new int[7];
-        System.out.println("Введите 7 элементов массива: ");
-        Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < 7; i++) {
-            array[i] = scanner.nextInt();
+    public static boolean compareWith3 (int[] array) {
+        System.out.println("Результат проверки: ");
+        if (array[0] == 3 || array[array.length-1] == 3) {
+            System.out.println(true);
+            return true;
         }
-        System.out.println("Вы ввели массив:");
-        for (int number : array) {
-            System.out.print(number + " ");
-        }
-        System.out.println("\nРезультат проверки: ");
-        return  (array[0] == 3 || array[6] == 3);
+        System.out.println(false);
+        return  false;
     }
 
     //Напишите программу, чтобы проверить, что массив содержит число 1 или 3
-    public static boolean findNum1Num3() {
-        int[] array = new int[5];
-        System.out.println("Введите 5 элементов массива: ");
-        Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < 5; i++) {
-            array[i] = scanner.nextInt();
-        }
-        System.out.println("Вы ввели массив:");
-        for (int number : array) {
-            System.out.print(number + " ");
-        }
+    public static boolean findNum1Num3(int[] array) {
         boolean result = false;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (array[i] == 1 || array[i] == 3) {
                 result = true;
             }
