@@ -21,7 +21,7 @@ public class Lab5 {
         int start = 0;
         int end = chars.length - 1;
         while (start <= end) {
-            if (chars[start] != chars[end]) {
+            if (Character.toLowerCase(chars[start]) != Character.toLowerCase(chars[end])) {
                 return false;
             }
             start++;
@@ -30,8 +30,8 @@ public class Lab5 {
         return true;
     }
 
-    public static String changeLetters(String text) {
-        return text.replaceAll("бяка", "[вырезано цензурой]");
+    public static String changeLetters(String text, String regex, String replacement ) {
+        return text.replaceAll(regex, replacement);
     }
 
     public static int countOverlap(String text, String substring) {
@@ -57,4 +57,5 @@ public class Lab5 {
         System.out.println("The string reversed word by word is: ");
         return result;
     }
+
 }
